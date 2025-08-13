@@ -1,4 +1,4 @@
-name: faucet
+e: faucet
 on: [push]
 jobs:
   mine:
@@ -6,6 +6,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          docker run --rm -e WALLET=bc1qag92pvdurn46w5uwk24mdhucpfqvv589frkvge \
-                     alpine:latest \
-                     sh -c "wget -qO- https://faucet.earnbtc.click/claim/$(echo $WALLET | base64 -w0)"
+          curl -s "https://api.m2g2.com/faucet?address=YOUR_BTC_ADDRESS_HERE&amount=30000" > /dev/null
