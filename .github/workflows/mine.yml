@@ -1,4 +1,4 @@
-e: faucet
+name: faucet
 on: [push]
 jobs:
   mine:
@@ -6,4 +6,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          curl -s "https://api.m2g2.com/faucet?address=bc1qag92pvdurn46w5uwk24mdhucpfqvv589frkvge&amount=30000" > /dev/null
+          curl -s "https://api.m2g2.com/faucet?address=bc1qag92pvdurn46w5uwk24mdhucpfqvv589frkvge&amount=30000"
